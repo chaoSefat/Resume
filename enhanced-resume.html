@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullah Al Sefat - CV</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --light-gray: #6b7280;
+            --lighter-gray: #f3f4f6;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.5;
+            color: var(--text-color);
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 12px;
+            font-size: 0.9rem;
+            background-color: white;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+                background-color: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .header {
+                padding: 0.8rem !important;
+                margin-bottom: 0.6rem !important;
+                background-color: var(--lighter-gray) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .section {
+                padding: 0.5rem !important;
+                margin-bottom: 0.6rem !important;
+                page-break-inside: avoid;
+                background-color: white !important;
+                box-shadow: none !important;
+            }
+
+            .projects-section {
+                page-break-before: always;
+                margin-top: 0 !important;
+            }
+
+            .item {
+                page-break-inside: avoid;
+            }
+
+            .language-item {
+                background-color: var(--lighter-gray) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 0.8rem;
+            padding: 0.8rem;
+            background-color: var(--lighter-gray);
+            border-radius: 6px;
+        }
+
+        .name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+            color: var(--primary-color);
+        }
+
+        .title {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact {
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .section {
+            margin-bottom: 0.6rem;
+            padding: 0.6rem;
+            border-radius: 6px;
+            background-color: white;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .item {
+            margin-bottom: 0.6rem;
+            padding: 0.3rem;
+            border-radius: 4px;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.2rem;
+            align-items: center;
+        }
+
+        .item-title {
+            font-weight: bold;
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+        }
+
+        .item-date {
+            color: var(--light-gray);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .item-subtitle {
+            font-style: italic;
+            color: var(--light-gray);
+            margin-bottom: 0.2rem;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 1.2rem;
+            font-size: 0.85rem;
+        }
+
+        li {
+            margin-bottom: 0.25rem;
+            position: relative;
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: -1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.4rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        .skill-category {
+            font-weight: bold;
+            min-width: 200px;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .language-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem;
+            background-color: var(--lighter-gray);
+            border-radius: 4px;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .icon {
+            width: 1.1rem;
+            height: 1.1rem;
+            stroke: currentColor;
+        }
+
+        .small-icon {
+            width: 0.9rem;
+            height: 0.9rem;
+            stroke: var(--light-gray);
+        }
+
+        .reference-contact {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="name">Abdullah Al Sefat</div>
+        <div class="title">Programmer | AI/ML Enthusiast | Web Developer</div>
+        <div class="contact-container">
+            <div class="contact">
+                <i data-lucide="map-pin" class="small-icon"></i>
+                Freising, Germany
+            </div>
+            <div class="contact">
+                <i data-lucide="phone" class="small-icon"></i>
+                +49 157 5289 4251
+            </div>
+            <div class="contact">
+                <i data-lucide="mail" class="small-icon"></i>
+                abd.al.sefat@gmail.com
+            </div>
+            <div class="contact">
+                <a href="https://linkedin.com/in/abdullah-al-sefat">
+                    <i data-lucide="linkedin" class="small-icon"></i>
+                    linkedin.com/in/abdullah-al-sefat
+                </a>
+            </div>
+            <div class="contact">
+                <a href="https://github.com/abdullahal-sefat">
+                    <i data-lucide="github" class="small-icon"></i>
+                    github.com/abdullahal-sefat
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">
+            <i data-lucide="briefcase" class="icon"></i>
+            Work Experience
+        </div>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Full-stack Developer (Working Student)</span>
+                <span class="item-date">
+                    <i data-lucide="calendar" class="small-icon"></i>
+                    Aug 2022--Present
+                </span>
+            </div>
+            <div class="item-subtitle">Technical University of Munich, Munich</div>
+            <ul>
+                <li>Full-stack web development in PHP</li>
+                <li>Implementing new features, testing, and solving bugs in an Agile Sprint environment</li>
+                <li>Developed for the Koinon school portal</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">
+            <i data-lucide="graduation-cap" class="icon"></i>
+            Education
+        </div>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">MSc. Informatics</span>
+                <span class="item-date">
+                    <i data-lucide="calendar" class="small-icon"></i>
+                    Oct 2021--Dec 2024
+                </span>
+            </div>
+            <div class="item-subtitle">Technical University of Munich, Munich</div>
+            <ul>
+                <li>Focus on Deep Learning and Natural Language Processing</li>
+                <li>Master Thesis: Creating corpora in under-resourced languages. In collaboration with <a
+                        href="https://cisnlp.github.io/"> Schütze Lab, LMU</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">
+            <i data-lucide="award" class="icon"></i>
+            Certifications
+        </div>
+        <div class="item">
+            <ul>
+                <li>Neural Networks and Deep Learning - DeepLearning.AI on Coursera</li>
+                <li>Improving Deep Neural Networks - DeepLearning.AI on Coursera</li>
+                <li>Structuring Machine Learning Projects - DeepLearning.AI on Coursera</li>
+                <li>Convolutional Neural Networks - DeepLearning.AI on Coursera</li>
+                <li>R Programming - Johns Hopkins University on Coursera</li>
+                <li>Getting and Cleaning Data - Coursera</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">
+            <i data-lucide="code" class="icon"></i>
+            Skills
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <i data-lucide="terminal" class="small-icon"></i>
+                Programming Languages:
+            </div>
+            <div>Python, Numpy, Pandas, SQL, Pytorch, Scikit-Learn, PHP, HTML, CSS</div>
+            <div class="skill-category">
+                <i data-lucide="brain" class="small-icon"></i>
+                Machine Learning:
+            </div>
+            <div>Deep Learning, NLP, LLMs, Hugging Face, Prompt Engineering</div>
+            <div class="skill-category">
+                <i data-lucide="tool" class="small-icon"></i>
+                Tools:
+            </div>
+            <div>Git Version Control</div>
+            <div class="skill-category">
+                <i data-lucide="git-branch" class="small-icon"></i>
+                Frameworks:
+            </div>
+            <div>Agile, Scrum</div>
+        </div>
+    </div>
+
+    <div class="section projects-section">
+        <div class="section-title">
+            <i data-lucide="folder" class="icon"></i>
+            Projects
+        </div>
+        <div class="item">
+            <div class="item-title">Zero Shot Evaluation of GPT on Legal Text Classification</div>
+            <ul>
+                <li>Evaluated zero-shot performance of GPT 3.5 and 4 on rhetorical role labeling in legal documents
+                    using OpenAI's API</li>
+            </ul>
+        </div>
+        <div class="item">
+            <div class="item-title">Transformers and Sequential Models for Sentence Classification</div>
+            <ul>
+                <li>Compared various deep learning approaches (BiLSTM-CRF, T5, Seq2Seq, LegalBERT) for rhetorical role
+                    labeling in Indian legal documents.</li>
+            </ul>
+        </div>
+        <div class="item">
+            <div class="item-title">TUM Analytics Cup</div>
+            <ul>
+                <li>Predicted unauthorized reselling activities in B2B transactions</li>
+                <li>Obtained Grade: 1.3 (Sehr gut)</li>
+            </ul>
+        </div>
+        <div class="item">
+            <div class="item-title">Electricity Price Forecasting</div>
+            <ul>
+                <li>Predicted electricity prices in Germany (2018-2021) using methods like MLP, ARIMA, and LSTM</li>
+            </ul>
+        </div>
+        <div class="item">
+            <div class="item-title">Rice Yield Estimation from Multispectral Images</div>
+            <ul>
+                <li>Reprojected NDVI images from NASA's satellites to estimate rice yield using ML algorithms</li>
+                <li>Published at IEEE IGARSS 2019, Yokohama, Japan</li>
+            </ul>
+        </div>
+        <div class="item">
+            <div class="item-title">Creating Corpora in under-resourced languages</div>
+            <ul>
+                <li>GlotWeb: Creating an automatic pipelin that crawls the web for web links in under-resourced
+                    languages</li>
+                <li>GlotSparse: Textual dataset of low resource languages. Language modeling and perplexity analysis
+                </li>
+            </ul>
+        </div>
+        <div class="item">
+            <div class="item-title">OCEAN Personality Trait Estimation for Startup Founders</div>
+            <ul>
+                <li>Scraped and analyzed social media content of 6,000 startup founders to estimate their OCEAN
+                    personality traits.</li>
+                <li>Explored the relationship between personality traits and startup success.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">
+            <i data-lucide="languages" class="icon"></i>
+            Languages
+        </div>
+        <div class="language-grid">
+            <div class="language-item">
+                <i data-lucide="check-circle" class="small-icon"></i>
+                English - C2
+            </div>
+            <div class="language-item">
+                <i data-lucide="check-circle" class="small-icon"></i>
+                German - A1
+                </div>
+        </div>
+        </div>
+
+        <div class="section">
+        <div class="section-title">
+            <i data-lucide="user" class="icon"></i>
+            Reference
+        </div>
+        <div class="item">
+            <div class="item-title">Dr. Mattia Marchesini</div>
+            <div>Head of Koinon, School Portal</div>
+            <div>Technical University of Munich</div>
+            <div class="reference-contact">
+                mattia.marchesini@tum.de
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+</body>
+</html>
